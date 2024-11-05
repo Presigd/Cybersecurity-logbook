@@ -10,3 +10,4 @@ Cybersecurity and Data Privacy- Blended
 | 04.11.2024   | 2     | Cisco Netacad- Module 1    | Module 1 Completed    |
 | 04.11.2024   | 1     | Week 1 Lecture    | Introduction to PortSwigger and BurpSuite   |
 | 04.11.2024   | 1.5     | PortSwigger and SQL Injection Lab    | Read SQL Injection topics in PortSwigger and Completed 1 lab|
+| 05.11.2024   | 2     | Cisco Netacad- Module 2    | Module 2 Completed    |
