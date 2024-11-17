@@ -13,3 +13,6 @@ Cybersecurity and Data Privacy- Blended
 | 05.11.2024   | 2     | Cisco Netacad- Module 2                             | Module 2 Completed    |
 | 07.11.2024   | 6     | Cisco Netacad- Introduction to Cybersecurity Course | Course Completed    |
 | 10.11.2024   | 2.5   | Authentication and Access Control lab               | Read relevant topics in PortSwigger and Completed 1 lab from each topic; Introduction to the portswigger environment assignment Completed|
+| 11.11.2024   | 2     | Week 3 Lecture and Docker Setup                     | Booking System Project started with Docker setup   |
+| 13.11.2024   | 2     | Workshop Session                                    | Working with the project   |
+| 17.11.2024   | 3     | Self work for project                               | Phase 1 project about to be completed; watched past recordings   |
