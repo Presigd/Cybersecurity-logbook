@@ -16,3 +16,5 @@ Cybersecurity and Data Privacy- Blended
 | 11.11.2024   | 2     | Week 3 Lecture and Docker Setup                     | Booking System Project started with Docker setup   |
 | 13.11.2024   | 2     | Workshop Session                                    | Working with the project   |
 | 17.11.2024   | 3     | Self work for project                               | Phase 1 project about to be completed; watched past recordings   |
+| 18.11.2024   | 1.5   | Lecture on Authentication                           | Intro to Authentication topics and Phase 2 of Booking System Project  |
+| 18.11.2024   | 3     | PortSwigger labs                                    | 13 labs completed on Portswigger  |
