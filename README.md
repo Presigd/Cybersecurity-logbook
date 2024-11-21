@@ -18,3 +18,5 @@ Cybersecurity and Data Privacy- Blended
 | 17.11.2024   | 3     | Self work for project                               | Phase 1 project about to be completed; watched past recordings   |
 | 18.11.2024   | 1.5   | Lecture on Authentication                           | Intro to Authentication topics and Phase 2 of Booking System Project  |
 | 18.11.2024   | 3     | PortSwigger labs                                    | 13 labs completed on Portswigger  |
+| 20.11.2024   | 2     | Workshop Session                                    | Working with the project Phase 1   |
+| 20.11.2024   | 6     | Booking system project- Phase 1                     | Working with the project Phase 1  |
