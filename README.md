@@ -20,3 +20,6 @@ Cybersecurity and Data Privacy- Blended
 | 18.11.2024   | 3     | PortSwigger labs                                    | 13 labs completed on Portswigger  |
 | 20.11.2024   | 2     | Workshop Session                                    | Working with the project Phase 1   |
 | 20.11.2024   | 6     | Booking system project- Phase 1                     | Working with the project Phase 1  |
+| 21.11.2024   | 3     | Booking system project- Phase 1- Submission         | Link to Report 1:https://github.com/Presigd/Cybersecurity-logbook/blob/main/Registration_page_first_test.md  |
+|    |      |          | Adding Zod for email address validation  |
+|    |      |          | Link to Final Report:https://github.com/Presigd/Cybersecurity-logbook/blob/main/Registration_page_final_test.md  |
