@@ -23,3 +23,5 @@ Cybersecurity and Data Privacy- Blended
 | 21.11.2024   | 3     | Booking system project- Phase 1- Submission         | Link to Report 1:https://github.com/Presigd/Cybersecurity-logbook/blob/main/Registration_page_first_test.md  |
 |    |      |          | Adding Zod for email address validation  |
 |    |      |          | Link to Final Report:https://github.com/Presigd/Cybersecurity-logbook/blob/main/Registration_page_final_test.md  |
+| 25.11.2024   | 2     | Lecture Week 5                                      | Lecture on Authorization  |
+| 25.11.2024   | 3     | Booking system project- Phase 2                     | Working with the project Phase 2  |
