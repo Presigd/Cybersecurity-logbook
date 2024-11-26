@@ -25,3 +25,5 @@ Cybersecurity and Data Privacy- Blended
 |    |      |          | Link to Final Report:https://github.com/Presigd/Cybersecurity-logbook/blob/main/Registration_page_final_test.md  |
 | 25.11.2024   | 2     | Lecture Week 5                                      | Lecture on Authorization  |
 | 25.11.2024   | 3     | Booking system project- Phase 2                     | Working with the project Phase 2  |
+| 26.11.2024   | 2     | Workshop Session                                    | Working with the project Phase 2  |
+| 26.11.2024   | 3     | Booking system project- Phase 2                     | Implemented and tested Login and Index page and ZAP report acquired  |
