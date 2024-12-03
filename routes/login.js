@@ -1,11 +1,12 @@
 import client from "../db/db.js";
 import * as bcrypt from "https://deno.land/x/bcrypt/mod.ts"; // For password comparison
 import { z } from "https://deno.land/x/zod@v3.16.1/mod.ts"; // For validation
+import { createSession } from "../sessionService.js"; // For sessions
 
 // Zod schema for login validation
 const loginSchema = z.object({
     username: z.string().email({ message: "Invalid email address" }),
-    password: z.string().min(8, "Invalid email or password"),
+    //password: z.string().min(8, "Invalid email or password"),
 });
 
 // Log the successful login
@@ -46,12 +47,21 @@ export async function loginUser(c, info) {
             return new Response("Invalid email or password", { status: 400 });
         }
 
+        // Create session
+        const sessionId = createSession({ username: storedUsername, role });
+
         // Log successful login
         const ipAddress = info.remoteAddr.hostname;
         await logLogin(userUUID, ipAddress);
 
-        // Authentication successful, redirect to the index page
-        return new Response(null, { status: 302, headers: { Location: "/", }, });
+        // Return a redirect response with the Set-Cookie header
+        return new Response(null, {
+            status: 302,
+            headers: {
+                Location: "/",
+                "Set-Cookie": `session_id=${sessionId}; HttpOnly; Secure; SameSite=Strict; Path=/`,
+            },
+        });
 
 
     } catch (error) {
