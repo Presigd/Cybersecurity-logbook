@@ -1,7 +1,7 @@
 import { serve } from "https://deno.land/std@0.199.0/http/server.ts";
 import { loginUser } from "./routes/login.js";
 import { registerUser } from "./routes/register.js";
-/*
+
 let connectionInfo = {};
 
 // Middleware to set security headers globally
@@ -21,7 +21,7 @@ async function addSecurityHeaders(req, handler) {
 
     return response;
 }
-*/
+
 // Serve static files
 async function serveStaticFile(path, contentType) {
     try {
@@ -35,7 +35,7 @@ async function serveStaticFile(path, contentType) {
 }
 
 // Handle incoming requests
-async function handler(req, info) {
+async function handler(req) {
     const url = new URL(req.url);
 
     // Route: Serve static files
@@ -69,7 +69,7 @@ async function handler(req, info) {
     // Route: Handle user login
     if (url.pathname === "/login" && req.method === "POST") {
         const formData = await req.formData();
-        return await loginUser(formData, info);
+        return await loginUser(formData, connectionInfo);
     }
 
     // Default response for unknown routes
@@ -92,13 +92,13 @@ function getContentType(filePath) {
     };
     return mimeTypes[ext] || "application/octet-stream";
 }
-/*
+
 // Start the server with middleware
 async function mainHandler(req, info) {
     connectionInfo = info;
     return await addSecurityHeaders(req, handler);
 }
-*/
 
-//Start the server
-serve(handler, { port: 8000 });
+serve(mainHandler, { port: 8000 });
+
+// deno run --allow-net --allow-env --allow-read --watch app.js 
