@@ -6,7 +6,6 @@ import { createSession } from "../sessionService.js"; // For sessions
 // Zod schema for login validation
 const loginSchema = z.object({
     username: z.string().email({ message: "Invalid email address" }),
-    //password: z.string().min(8, "Invalid email or password"),
 });
 
 // Log the successful login
@@ -20,7 +19,7 @@ async function logLogin(userUUID, ipAddress) {
 
 // Helper function to fetch the user by email
 async function getUserByEmail(email) {
-    const result = await client.queryArray(`SELECT username, password_hash, user_token FROM zephyr_users WHERE username = $1`, [email]);
+    const result = await client.queryArray(`SELECT username, password_hash, user_token, role FROM zephyr_users WHERE username = $1`, [email]);
     return result.rows.length > 0 ? result.rows[0] : null;
 }
 
@@ -30,7 +29,7 @@ export async function loginUser(c, info) {
     const password = c.get('password');
     try {
         // Validate the input data using Zod
-        loginSchema.parse({ username, password });
+        loginSchema.parse({ username });
 
         // Fetch the user by email
         const user = await getUserByEmail(username);
@@ -38,8 +37,8 @@ export async function loginUser(c, info) {
             return new Response("Invalid email or password", { status: 400 });
         }
 
-        const [storedUsername, storedPasswordHash, userUUID] = user;
-        
+        const [storedUsername, storedPasswordHash, userUUID, role] = user;
+
 
         // Compare provided password with the stored hashed password
         const passwordMatches = await bcrypt.compare(password, storedPasswordHash);
