@@ -27,3 +27,6 @@ Cybersecurity and Data Privacy- Blended
 | 25.11.2024   | 3     | Booking system project- Phase 2                     | Working with the project Phase 2  |
 | 26.11.2024   | 2     | Workshop Session                                    | Working with the project Phase 2  |
 | 26.11.2024   | 3     | Booking system project- Phase 2                     | Implemented and tested Login and Index page and ZAP report acquired  |
+| 28.11.2024   | 5     | Booking system project- Phase 2- Submission         | Link to Report 1:https://github.com/Presigd/Cybersecurity-logbook/blob/main/Index-Login-Registration-Test-1.md  |
+|    |      |          | Adding CSP Header  |
+|    |      |          | Link to Final Report:https://github.com/Presigd/Cybersecurity-logbook/blob/main/Index-Login-Registration-Test-%20Final.md  |
