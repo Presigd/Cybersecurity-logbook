@@ -1,10 +1,15 @@
 import { serve } from "https://deno.land/std@0.199.0/http/server.ts";
 import { loginUser } from "./routes/login.js";
-import { registerUser } from "./routes/register.js";
+import { registerUser, getAccountInfo } from "./routes/register.js";
+import { registerResource, getResources } from "./routes/resource.js";
+import { registerReservation, handleReservationForm } from "./routes/reservation.js";
 import { handleIndex, handleDefaultIndex } from "./routes/indexPage.js";
 import { getSession, destroySession, getCookieValue } from "./sessionService.js"; // For sessions
 
 let connectionInfo = {};
+
+// In-memory session store (replace with a database in production)
+const sessionStore = new Map();
 
 // Middleware to set security headers globally
 async function addSecurityHeaders(req, handler) {
@@ -50,7 +55,6 @@ async function handler(req) {
     // Route: Index page
     if (url.pathname === "/" && req.method === "GET") {
         const session = getSession(req);
-
         if (session) {
             return await handleIndex(req);
 
@@ -78,6 +82,82 @@ async function handler(req) {
     if (url.pathname === "/login" && req.method === "POST") {
         const formData = await req.formData();
         return await loginUser(formData, connectionInfo);
+    }
+
+    // Route: Handle user log out
+    if (url.pathname === "/logout" && req.method === "GET") {
+        // Destroy session
+        const cookies = req.headers.get("Cookie") || "";
+        const sessionId = getCookieValue(cookies, "session_id");
+
+        if (sessionId) {
+            destroySession(sessionId); // Remove the session from the store
+        }
+
+        // Clear the session cookie and redirect to the index page
+        return new Response(null, {
+            status: 302,
+            headers: {
+                Location: "/",
+                "Set-Cookie": "session_id=; HttpOnly; Secure; SameSite=Strict; Path=/; Max-Age=0",
+            },
+        });
+    }
+
+    // Route: Resource page
+    if (url.pathname === "/resources" && req.method === "GET") {
+        // Authorization part
+        const session = getSession(req);
+        if (!session) {
+            return new Response("Unauthorized", { status: 401 });
+        }
+        if (session.role != "administrator") {
+            return new Response("Unauthorized", { status: 401 });
+        }
+        return await serveStaticFile("./views/resource.html", "text/html");
+    }
+
+    // Route: Handle resources
+    if (url.pathname === "/resources" && req.method === "POST") {
+        const formData = await req.formData();
+        return await registerResource(formData);
+    }
+
+    // Route: Reservations page
+    if (url.pathname === "/reservation" && req.method === "GET") {
+        return await handleReservationForm(req);
+    }
+
+    // Route: List of resources
+    if (url.pathname === "/resourcesList" && req.method === "GET") {
+        return await getResources();
+    }
+
+    // Route: Handle reservations
+    if (url.pathname === "/reservation" && req.method === "POST") {
+        const formData = await req.formData();
+        return await registerReservation(formData);
+    }
+
+    // Route: Terms of service page
+    if (url.pathname === "/terms" && req.method === "GET") {
+        return await serveStaticFile("./views/terms.html", "text/html");
+    }
+
+    // Route: Privacy notice page
+    if (url.pathname === "/privacynotice" && req.method === "GET") {
+        return await serveStaticFile("./views/privacynotice.html", "text/html");
+    }
+
+    // Route: Account page
+    if (url.pathname === "/account" && req.method === "GET") {
+        return await serveStaticFile("./views/account.html", "text/html");
+    }
+
+    // Route: Account info
+    if (url.pathname === "/accountInfo" && req.method === "GET") {
+        const session = getSession(req);
+        return await getAccountInfo(session.username);
     }
 
     // Default response for unknown routes
@@ -108,5 +188,6 @@ async function mainHandler(req, info) {
 }
 
 serve(mainHandler, { port: 8000 });
+//serve(mainHandler, { port: 80, hostname: "0.0.0.0" });
 
-// deno run --allow-net --allow-env --allow-read --watch app.js 
+// Run: deno run --allow-net --allow-env --allow-read --watch app.js
