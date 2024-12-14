@@ -35,4 +35,7 @@ Cybersecurity and Data Privacy- Blended
 | 04.12.2024   | 3     | Workshop Session                                    | workshop session on project Phase 3 and independent work  |
 | 07.12.2024   | 3     | Booking system project- Phase 3                     | Working with the project Phase 3  |
 | 08.12.2024   | 4     | Phase 3                                             | Booking System Phase 3 submitted. Link to report:                                   https://github.com/Presigd/Cybersecurity-logbook/blob/main/Booking%20system%20phase%203%20report.md   |
-
+| 11.12.2024   | 1     | Final Lecture                                       | Finishing the Project  |
+| 12.12.2024   | 3     | Booking system project- Phase 4                     | Working with the project Phase 4  |
+| 13.12.2024   | 4     | Booking system project- Phase 4                     | Working with the project Phase 4- adding version 2 in repo  |
+| 14.12.2024   | 3     | Booking system project- Phase 4                     | Booking System project Phase 4- Submitted  |
