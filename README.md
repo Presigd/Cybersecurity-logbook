@@ -30,3 +30,9 @@ Cybersecurity and Data Privacy- Blended
 | 28.11.2024   | 5     | Booking system project- Phase 2- Submission         | Link to Report 1:https://github.com/Presigd/Cybersecurity-logbook/blob/main/Index-Login-Registration-Test-1.md  |
 |    |      |          | Adding CSP Header  |
 |    |      |          | Link to Final Report:https://github.com/Presigd/Cybersecurity-logbook/blob/main/Index-Login-Registration-Test-%20Final.md  |
+| 02.12.2024   | 3     | Lecture Week 6                                      | Lecture on GDPR and independent work  |
+| 03.12.2024   | 4     | Booking system project- Phase 3                     | Working with the project Phase 3  |
+| 04.12.2024   | 3     | Workshop Session                                    | workshop session on project Phase 3 and independent work  |
+| 07.12.2024   | 3     | Booking system project- Phase 3                     | Working with the project Phase 3  |
+| 08.12.2024   | 4     | Phase 3                                             | Booking System Phase 3 submitted. Link to report:                                   https://github.com/Presigd/Cybersecurity-logbook/blob/main/Booking%20system%20phase%203%20report.md   |
+
